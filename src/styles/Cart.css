@@ -1,0 +1,33 @@
+.yorha-h2 {
+  font-weight: lighter;
+  border: solid #454138;
+  border-width: 0.1rem 0;
+  padding: 0.1rem 1rem;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.cart {
+  margin: 20px;
+  padding: 20px;
+  background-color: #dcd8c0;
+  flex: 1;
+  height: 100%;
+}
+
+.yorha-table {
+  border-collapse: collapse;
+  font-weight: inherit;
+  width: 100%;
+}
+
+.yorha-table th {
+  font-weight: normal;
+  text-align: left;
+  border-bottom: 0.1rem solid #454138;
+}
+
+.yorha-table td, .yorha-table th {
+  padding: 0.5rem;
+}
+
