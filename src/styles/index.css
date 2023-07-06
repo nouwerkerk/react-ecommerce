@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: helvetica, sans-serif;
+  color: #454138;
+  letter-spacing: 0.03rem;
+  font-weight: lighter;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  background-color: #d1cdb7;
+  -webkit-background-size: 0.3rem 0.3rem;
+  -moz-background-size: 0.3rem 0.3rem;
+  background-size: 0.3rem 0.3rem;
+  background-image: -webkit-linear-gradient(left, #ccc8b1 1px, rgba(204,200,177,0) 1px), -webkit-linear-gradient(top, #ccc8b1 1px, rgba(204,200,177,0) 1px);
+  background-image: -moz-linear-gradient(left, #ccc8b1 1px, rgba(204,200,177,0) 1px), -moz-linear-gradient(top, #ccc8b1 1px, rgba(204,200,177,0) 1px);
+  background-image: -o-linear-gradient(left, #ccc8b1 1px, rgba(204,200,177,0) 1px), -o-linear-gradient(top, #ccc8b1 1px, rgba(204,200,177,0) 1px);
+  background-image: -ms-linear-gradient(left, #ccc8b1 1px, rgba(204,200,177,0) 1px), -ms-linear-gradient(top, #ccc8b1 1px, rgba(204,200,177,0) 1px);
+  background-image: linear-gradient(to right, #ccc8b1 1px, rgba(204,200,177,0) 1px), linear-gradient(to bottom, #ccc8b1 1px, rgba(204,200,177,0) 1px);
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

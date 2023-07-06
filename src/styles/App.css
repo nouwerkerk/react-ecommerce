@@ -1,0 +1,62 @@
+.yorha-figure {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  margin-bottom: 1rem;
+  background-color: #dcd8c0;
+  padding: 0.5rem;
+}
+.yorha-figure > :not(figcaption) {
+  margin: 0.5rem;
+}
+.yorha-figure > figcaption {
+  -webkit-box-ordinal-group: -1;
+  -moz-box-ordinal-group: -1;
+  -o-box-ordinal-group: -1;
+  -ms-flex-order: -1;
+  -webkit-order: -1;
+  order: -1;
+  margin: -0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: #454138;
+  color: #bab5a1;
+}
+
+.yorha-p {
+  margin: 0 0 1rem 0;
+}
+
+.yorha-hr {
+  display: block;
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+  margin: 1rem 0;
+  border-top: solid #bab5a1;
+  border-width: 0.1rem 0 0 0;
+  font-family: helvetica, sans-serif;
+  letter-spacing: 0.03rem;
+  font-weight: lighter;
+  color: #454138;
+}
+
+.body-grid {
+  display: flex;
+}
