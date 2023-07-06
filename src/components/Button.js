@@ -1,9 +1,9 @@
 import React from 'react'
 import './../styles/Button.css'
 
-const Button = () => {
+const Button = ({ onClick, name, text, isDisabled }) => {
   return (
-    <button>Click!</button>
+    <button disabled={isDisabled && "disabled"} onClick={() => onClick(name)}>{`${text}`}</button>
   )
 }
 

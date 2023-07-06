@@ -5,10 +5,8 @@ import Cart from './components/Cart';
 
 import { useEffect, useState } from 'react';
 
-
 function App() {
   const [shoppingCart, setShoppingCart] = useState({})
-
   const weapons = [
     {
       name: "Virtuous Treaty",
@@ -19,6 +17,7 @@ function App() {
       lt: '5',
       hv: '2',
       other: [],
+      cost: 1000
     },
     {
       name: "Virtuous Contract",
@@ -29,6 +28,7 @@ function App() {
       lt: '4',
       hv: '3',
       other: [],
+      cost: 1000
     },
     {
       name: "Virtuous Grief",
@@ -39,32 +39,55 @@ function App() {
       lt: 5,
       hv: 2,
       other: [],
+      cost: 3000
+    },
+    {
+      name: "Test",
+      level: 1,
+      text: 'Weapons made of white armor from the East.',
+      dmg_min: 120,
+      dmg_max: 150,
+      lt: 5,
+      hv: 2,
+      other: [],
+      cost: 3000
     }
   ]
 
-  const addWeaponToCart = (name) => {
-    Object.keys(weapons).map((key) => {
-      const weapon = weapons[key]
-      if (weapon.name === name) {
-        if (Object.keys(shoppingCart).length == 0) {
-          setShoppingCart({[name]: {amount: 1, cost: 1000}})
-        }
-        else {
-          !(name in shoppingCart) && setShoppingCart({[name]: {amount: 1, cost: 1000}})
-        }
+  const addWeaponToCart = (weaponName) => {
+    weapons.map((weapon) => {
+      if (weapon.name === weaponName && !(weaponName in shoppingCart)) {
+        setShoppingCart({...shoppingCart, [weaponName]: {amount: 1, cost: weapon.cost}})
       }
-      /*return  &&  
-        && !(name in shoppingCart) && */
-    })
+    }
+  )}
+
+  const onAmountChange = (event, weaponName) => {
+    const value = parseInt(event.target.value)
+    if (value == 0) {
+      setShoppingCart((prevState) => {
+        const newState = { ...prevState }
+        delete newState[weaponName]
+        return newState
+      })
+    }
+    else {
+      setShoppingCart((prevState) => ({
+        ...prevState,
+        [weaponName]: {
+          ...prevState[weaponName],
+          'amount': value
+        }
+      }))
+    }
   }
 
   return (
     <>
       <Header />
-      {addWeaponToCart("Virtuous Grief")}
       <div className="body-grid">
-        <Items weapons={weapons} />
-        <Cart shoppingCart={shoppingCart}/>
+        <Items weapons={weapons} shoppingCart={shoppingCart} onAdd={addWeaponToCart}/>
+        <Cart shoppingCart={shoppingCart} onSelectChange={onAmountChange}/>
       </div>
     </>
   );

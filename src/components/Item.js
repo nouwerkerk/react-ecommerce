@@ -2,7 +2,7 @@ import React from 'react'
 import './../styles/Item.css'
 import Button from './Button'
 
-const Item = ({ weapon }) => {
+const Item = ({ weapon, isDisabled, onAdd }) => {
   return (
     <figure className='yorha-figure'>
       <figcaption className='flex'>
@@ -16,7 +16,7 @@ const Item = ({ weapon }) => {
       <hr className='yorha-hr'></hr>
       <p className='yorha-p'>Attack: {`${weapon.dmg_min}`} - {`${weapon.dmg_max}`}</p>
       <p className='yorha-p'>Combo: Lt {`${weapon.lt}`} Hv {`${weapon.hv}`}</p>
-      <Button/>
+      <Button onClick={onAdd} name={weapon.name} text={"Add"} isDisabled={isDisabled}/>
     </figure>
   )
 }
